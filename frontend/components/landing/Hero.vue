@@ -4,7 +4,7 @@ import { ref } from 'vue'
 const isVideoPlaying = ref(false)
 
 const toggleVideo = () => {
-  isVideoPlaying.value = trueziez
+  isVideoPlaying.value = true
 }
 </script>
 

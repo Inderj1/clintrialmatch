@@ -1,16 +1,16 @@
 <script setup>
-import { ref } from 'vue';
+import AboutUs from '~/components/landing/AboutUs.vue';
 
 definePageMeta({
   layout: "landing",
-  title: "About Us - Orynx",
+  title: "About Us - CropMatrix",
   meta: [
-    { hid: 'description', name: 'description', content: 'Learn more about Orynx, our mission, and values.' },
-    { hid: 'og:title', property: 'og:title', content: 'About Us - Orynx' },
-    { hid: 'og:description', property: 'og:description', content: 'Learn more about Orynx, our mission, and values.' },
-    { hid: 'og:url', property: 'og:url', content: 'https://orynx.co.uk/about' },
-    { hid: 'twitter:title', name: 'twitter:title', content: 'About Us - Orynx' },
-    { hid: 'twitter:description', name: 'twitter:description', content: 'Learn more about Orynx, our mission, and values.' },
+    { hid: 'description', name: 'description', content: 'Learn more about CropMatrix, our mission, and values.' },
+    { hid: 'og:title', property: 'og:title', content: 'About Us - CropMatrix' },
+    { hid: 'og:description', property: 'og:description', content: 'Learn more about CropMatrix, our mission, and values.' },
+    { hid: 'og:url', property: 'og:url', content: 'https://cropmatrix.com/about' },
+    { hid: 'twitter:title', name: 'twitter:title', content: 'About Us - CropMatrix' },
+    { hid: 'twitter:description', name: 'twitter:description', content: 'Learn more about CropMatrix, our mission, and values.' }
   ],
   script: [
     {
@@ -18,85 +18,109 @@ definePageMeta({
       json: {
         '@context': 'https://schema.org',
         '@type': 'Organization',
-        name: 'Orynx',
-        url: 'https://orynx.co.uk',
-        logo: 'assets/img/ORY.png',
+        name: 'CropMatrix',
+        url: 'https://cropmatrix.com',
+        logo: 'assets/img/cropmatrix-logo.svg',
         sameAs: [
-          'https://www.facebook.com/orynx',
-          'https://www.twitter.com/orynx',
-          'https://www.linkedin.com/company/orynx'
+          'https://www.facebook.com/cropmatrix',
+          'https://www.twitter.com/cropmatrix',
+          'https://www.linkedin.com/company/cropmatrix'
         ]
       }
     }
   ]
 });
-
-const features = ref([
-  {
-    title: "Lifelike Patient Scenarios",
-    icon: "user-md",
-    description: "Empowers healthcare practitioners with immersive simulations that mirror real patient interactions, fostering skill refinement and enhanced decision-making."
-  },
-  {
-    title: "Advanced Technology Integration",
-    icon: "cogs",
-    description: "Utilizes cutting-edge tools like ChatGPT and Generative AI to dynamically generate scenarios based on real-world data, enhancing decision-making in diverse medical contexts."
-  },
-  {
-    title: "RAG Integration",
-    icon: "database",
-    description: "Enhances simulations by using Retrieval-Augmented Generation technology, accessing extensive knowledge repositories to amplify scenario depth and relevance."
-  },
-  {
-    title: "Cloud Infrastructure",
-    icon: "cloud",
-    description: "Built on AWS and modern cloud technologies, our platform ensures scalability, security, and global accessibility for seamless user engagement."
-  },
-  {
-    title: "Big Data Analytics",
-    icon: "chart-bar",
-    description: "Harnesses Big Data analytics to extract actionable insights from user interactions, continuously refining simulation accuracy and effectiveness."
-  }
-]);
 </script>
 
 <template>
-  <div class="container mx-auto px-4 text-[#323031] pt-20">
-    <section class="text-center mt-16 mb-16">
-      <h1 class="text-4xl font-bold">About Us</h1>
-      <p class="mt-4 text-lg">
-        At the forefront of integrating AI technology in healthcare, we're committed to revolutionizing patient care.
-      </p>
-    </section>
+  <div>
+    <!-- Hero Section -->
+    <div class="relative h-[60vh] overflow-hidden">
+      <img 
+        src="/aboutus.jpg" 
+        alt="CropMatrix Team" 
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div class="relative container mx-auto px-4 h-full flex items-center">
+        <div class="max-w-4xl">
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            Our mission is to revolutionize sustainable agriculture through advanced technology and biological solutions
+          </h1>
+          <p class="text-xl text-white">
+            Leading the way in AI-powered crop management and biological pest control
+          </p>
+        </div>
+      </div>
+    </div>
 
-    <section class="my-16">
-      <h2 class="text-3xl font-bold text-center">Our Mission</h2>
-      <p class="mt-4 text-lg max-w-4xl mx-auto text-center">
-        Our mission is to furnish healthcare professionals with experiential learning opportunities, enabling them to
-        elevate patient care standards, streamline operations, and achieve superior outcomes.
-      </p>
-    </section>
+    <!-- Navigation Links -->
+    <div class="bg-gray-100 border-b border-gray-200">
+      <div class="container mx-auto px-4">
+        <div class="flex space-x-8 py-4 text-sm">
+          <a href="#sustainability" class="text-green-700 hover:text-green-900">Sustainability</a>
+          <a href="#innovation" class="text-green-700 hover:text-green-900">Innovation</a>
+          <a href="#growth" class="text-green-700 hover:text-green-900">Growth & Expansion</a>
+        </div>
+      </div>
+    </div>
 
-    <section class="my-16">
-      <h2 class="text-3xl font-bold text-center">Key Features</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-16 mt-8">
-        <div v-for="feature in features" :key="feature.title" class="flex gap-4 items-start">
-          <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition-shadow duration-300 ease-in-out">
-            <h3 class="font-semibold text-lg">{{ feature.title }}</h3>
-            <p class="mt-2 leading-relaxed">
-              {{ feature.description }}
-            </p>
+    <!-- Main Content -->
+    <AboutUs />
+
+    <!-- Growth & Achievements Section -->
+    <div class="bg-gray-50 py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Growth & Achievements</h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Recent Achievements -->
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-bold text-green-700 mb-6">Recent Milestones</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-green-500 mr-3">•</span>
+                <p>Successfully deployed AI-powered crop monitoring systems in over 100 greenhouses</p>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-500 mr-3">•</span>
+                <p>Expanded operations to 5 new countries in the past year</p>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-500 mr-3">•</span>
+                <p>Launched innovative biological pest control solutions for vertical farming</p>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-500 mr-3">•</span>
+                <p>Established new research partnerships with leading agricultural institutions</p>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Future Plans -->
+          <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-bold text-green-700 mb-6">Strategic Growth</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start">
+                <span class="text-green-500 mr-3">•</span>
+                <p>Investing in advanced machine learning capabilities for precise crop management</p>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-500 mr-3">•</span>
+                <p>Expanding our biological control agent production facilities</p>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-500 mr-3">•</span>
+                <p>Developing new sustainable solutions for emerging agricultural challenges</p>
+              </li>
+              <li class="flex items-start">
+                <span class="text-green-500 mr-3">•</span>
+                <p>Building strategic partnerships to enhance global reach and impact</p>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </template>
-
-<style scoped>
-.icon {
-  filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
-  width: 50px;
-  height: 50px;
-}
-</style>

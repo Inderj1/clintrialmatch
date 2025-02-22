@@ -1,23 +1,26 @@
 <template>
-  <div class="mt-32 md:mt-24">
-    <!-- Features Section -->
-    <div class="text-right">
-      <h2 class="text-4xl lg:text-5xl font-bold tracking-tight text-font">
-        Explore AI Innovations in Healthcare
-      </h2>
-      <p class="text-lg mt-4 text-text">
-        Bridging Technology with Medical Excellence
-      </p>
-    </div>
+  <div class="bg-gray-50 py-24">
+    <div class="container mx-auto px-4">
+      <!-- Features Section -->
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="text-4xl lg:text-5xl font-bold tracking-tight text-gray-900">
+          Our Agricultural Solutions
+        </h2>
+        <p class="text-lg mt-4 text-gray-600">
+          Comprehensive Solutions for Sustainable Crop Protection
+        </p>
+      </div>
 
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-16 mt-10">
-      <div v-for="item in features" :key="item.title" class="flex gap-4 items-start">
-        <div class="mt-1 bg-gradient-to-r from-header to-background rounded-full p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" :name="item.icon" />
-        </div>
-        <div class="text-right">
-          <h3 class="font-semibold text-2xl text-font">{{ item.title }}</h3>
-          <p class="text-text mt-2 leading-relaxed">
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-12 mt-16">
+        <div v-for="item in features" :key="item.title" 
+             class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center mb-4">
+            <div class="bg-green-600 rounded-lg p-3 w-12 h-12 flex items-center justify-center">
+              <Icon class="text-white text-2xl" :name="item.icon" />
+            </div>
+            <h3 class="font-semibold text-xl text-gray-900 ml-4">{{ item.title }}</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">
             {{ item.description }}
           </p>
         </div>
@@ -29,34 +32,34 @@
 <script setup>
 const features = [
   {
-    title: "AI-Powered Diagnostics",
-    description: "Use AI algorithms for quick and accurate patient diagnostics, enhancing healthcare outcomes.",
-    icon: "mdi:brain",
+    title: "Beneficial Insects",
+    description: "Wide range of natural predators and parasitoids for effective biological pest control in various crops.",
+    icon: "mdi:bug",
   },
   {
-    title: "Machine Learning Insights",
-    description: "Utilize ML to uncover patterns and predictions in health data, enabling personalized medicine and proactive health management.",
+    title: "Bumblebee Pollination",
+    description: "Professional pollination services using bumblebees to maximize crop yield and quality.",
+    icon: "mdi:bee",
+  },
+  {
+    title: "Monitoring Systems",
+    description: "Advanced monitoring tools and traps for early pest detection and population tracking.",
     icon: "mdi:chart-line",
   },
   {
-    title: "Simulation Learning for Training",
-    description: "Enhance medical training and preparedness through realistic simulation learning platforms, bridging the gap between theory and practice.",
-    icon: "mdi:virtual-reality",
+    title: "Biostimulants",
+    description: "Natural products to enhance plant growth, stress resistance, and crop quality.",
+    icon: "mdi:sprout",
   },
   {
-    title: "Deep Learning in Medical Imaging",
-    description: "Deploy deep learning models to interpret medical images with greater precision, aiding in early detection and treatment planning.",
-    icon: "mdi:magnify",
+    title: "Technical Expertise",
+    description: "Expert consultation and support from our team of agricultural specialists.",
+    icon: "mdi:account-group",
   },
   {
-    title: "Infrastructure as Code (IaC) Tools",
-    description: "Implement IaC tools to automate and manage healthcare IT infrastructures, ensuring scalability, security, and compliance.",
-    icon: "mdi:code-json",
-  },
-  {
-    title: "HIPAA Compliance & Data Security",
-    description: "Ensure data protection and compliance with healthcare regulations such as HIPAA, safeguarding patient information.",
-    icon: "mdi:security",
+    title: "Research Programs",
+    description: "Ongoing research and development of new sustainable agricultural solutions.",
+    icon: "mdi:microscope",
   },
 ];
 </script>

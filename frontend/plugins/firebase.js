@@ -4,9 +4,9 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBJ-aEYuz05JUeHBn7sQViEQxmOrdDR3hU",
-  authDomain: "orynx-nuxt-app.firebaseapp.com",
-  projectId: "orynx-nuxt-app",
-  storageBucket: "orynx-nuxt-app.appspot.com",
+  authDomain: "cropmatrix-app.firebaseapp.com",
+  projectId: "cropmatrix-app",
+  storageBucket: "cropmatrix-app.appspot.com",
   messagingSenderId: "898126982970",
   appId: "1:898126982970:web:7c0cf2ed8da026935d2a03",
   measurementId: "G-YM7DVP8GK4",

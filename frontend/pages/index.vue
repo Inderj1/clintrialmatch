@@ -1,42 +1,35 @@
 <script setup>
 definePageMeta({
   layout: "landing",
-  title: "Orynx - Home",
+  title: "CropMatrix",
   meta: [
-    { hid: 'description', name: 'description', content: 'Welcome to Orynx, your go-to platform for integrating AI technology in healthcare.' },
-    { hid: 'og:title', property: 'og:title', content: 'Orynx - Home' },
-    { hid: 'og:description', property: 'og:description', content: 'Welcome to Orynx, your go-to platform for integrating AI technology in healthcare.' },
-    { hid: 'og:image', property: 'og:image', content: '/assets/img/ORY.png' },
-    { hid: 'og:url', property: 'og:url', content: 'https://orynx.co.uk' },
-    { hid: 'twitter:title', name: 'twitter:title', content: 'Orynx - Home' },
-    { hid: 'twitter:description', name: 'twitter:description', content: 'Welcome to Orynx, your go-to platform for integrating AI technology in healthcare.' },
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      json: {
-        '@context': 'https://schema.org',
-        '@type': 'WebSite',
-        name: 'Orynx',
-        url: 'https://orynx.co.uk',
-        potentialAction: {
-          '@type': 'SearchAction',
-          target: 'https://orynx.co.uk/search?q={search_term_string}',
-          'query-input': 'required name=search_term_string'
-        }
-      }
-    }
+    { hid: 'description', name: 'description', content: 'Sustainable Solutions for Modern Agriculture' },
+    { hid: 'og:title', property: 'og:title', content: 'CropMatrix' },
+    { hid: 'og:description', property: 'og:description', content: 'Leading the way in biological crop protection and natural pollination' },
+    { hid: 'og:image', property: 'og:image', content: '/assets/img/greenhouse-hero.jpg' },
+    { hid: 'og:url', property: 'og:url', content: 'https://www.cropmatrix.com' },
   ]
 });
 
+import Hero from "../components/landing/Hero.vue";
+import AboutUs from "../components/landing/AboutUs.vue";
+import Features from "../components/landing/Features.vue";
+import Technologies from "../components/landing/Technologies.vue";
+import Logos from "../components/landing/Logos.vue";
+import Etfs from "../components/landing/Etfs.vue";
+import Cta from "../components/landing/Cta.vue";
+import Contactform from "../components/landing/Contactform.vue";
 </script>
 
 <template>
-  <LandingContainer>
-    <LandingHero />
-    <LandingFeatures />
-    <LandingLogos />
-    
-    <LandingTechnologies />
-  </LandingContainer>
+  <div class="overflow-hidden">
+    <Hero />
+    <AboutUs />
+    <Features />
+    <Technologies />
+    <Logos />
+    <Etfs />
+    <Cta />
+    <Contactform />
+  </div>
 </template>

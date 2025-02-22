@@ -1,4 +1,6 @@
-\<script setup>
+<script setup>
+import { onMounted } from 'vue';
+
 onMounted(() => {
   const form = document.getElementById("form");
   const result = document.getElementById("result");
@@ -49,76 +51,124 @@ onMounted(() => {
 </script>
 
 <template>
-  <!-- To make this contact form work, create your free access key from https://web3forms.com/
-     Then you will get all form submissions in your email inbox. -->
-  <form action="https://api.web3forms.com/submit" method="POST" id="form" class="needs-validation" novalidate>
-    <input type="hidden" name="access_key" value="f656e7e3-c47a-4f40-a611-f3375b052645
-" />
-    <!-- Create your free access key from https://web3forms.com/ -->
-    <input type="checkbox" class="hidden" style="display: none" name="botcheck" />
-    <div class="mb-5">
-        <input type="text" placeholder="First Name" required
-        class="w-full px-4 py-3 border-2 placeholder:text-text rounded-md outline-none focus:ring-4 border-font focus:border-text ring-font/20 bg-white/80"
-        name="firstName" />
-      <div class="empty-feedback invalid-feedback text-font text-sm mt-1">
-        Please provide your first name.
+  <div class="bg-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 text-center mb-2">Contact Us</h2>
+        <p class="text-gray-600 text-center mb-8">Get expert advice for your crop protection needs</p>
+        
+        <form action="https://api.web3forms.com/submit" method="POST" id="form" class="needs-validation space-y-6" novalidate>
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+          <input type="checkbox" class="hidden" style="display: none" name="botcheck" />
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+              <input type="text" required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                name="firstName" />
+              <div class="empty-feedback invalid-feedback text-red-500 text-sm mt-1">
+                Please provide your first name.
+              </div>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+              <input type="text" required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                name="lastName" />
+              <div class="empty-feedback invalid-feedback text-red-500 text-sm mt-1">
+                Please provide your last name.
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+              <input type="email" required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                name="email" />
+              <div class="empty-feedback text-red-500 text-sm mt-1">
+                Please provide your email.
+              </div>
+              <div class="invalid-feedback text-red-500 text-sm mt-1">
+                Please provide a valid email address.
+              </div>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+              <input type="tel"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                name="phone" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Company/Farm Name</label>
+            <input type="text" required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              name="company" />
+            <div class="empty-feedback invalid-feedback text-red-500 text-sm mt-1">
+              Please provide your company/farm name.
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Crop Type</label>
+              <select name="cropType" required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                <option value="" disabled selected>Select Crop Type</option>
+                <option value="vegetables">Vegetables</option>
+                <option value="fruits">Fruits</option>
+                <option value="flowers">Flowers</option>
+                <option value="cereals">Cereals</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="empty-feedback invalid-feedback text-red-500 text-sm mt-1">
+                Please select a crop type.
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Inquiry Type</label>
+              <select name="inquiryType" required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                <option value="" disabled selected>Select Inquiry Type</option>
+                <option value="pest-control">Pest Control Solutions</option>
+                <option value="pollination">Pollination Services</option>
+                <option value="technical">Technical Support</option>
+                <option value="distribution">Distribution Partnership</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="empty-feedback invalid-feedback text-red-500 text-sm mt-1">
+                Please select an inquiry type.
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+            <textarea name="message" required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 h-36"
+              placeholder="Please describe your needs or questions..."></textarea>
+            <div class="empty-feedback invalid-feedback text-red-500 text-sm mt-1">
+              Please enter your message.
+            </div>
+          </div>
+
+          <button type="submit" 
+            class="w-full bg-green-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-green-700 transition-colors">
+            Send Message
+          </button>
+          
+          <div id="result" class="mt-3 text-center"></div>
+        </form>
       </div>
     </div>
-    <div class="mb-5">
-      <input type="text" placeholder="Last Name" required
-        class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
-        name="lastName" />
-      <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
-        Please provide your last name.
-      </div>
-    </div>
-    <div class="mb-5">
-      <input type="email" placeholder="Business Email" required
-        class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
-        name="email" />
-      <div class="empty-feedback text-red-400 text-sm mt-1">
-        Please provide your business email.
-      </div>
-      <div class="invalid-feedback text-red-400 text-sm mt-1">
-        Please provide a valid email address.
-      </div>
-    </div>
-    <div class="mb-5">
-      <input type="tel" placeholder="Phone Number"
-        class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
-        name="phone" />
-    </div>
-    <div class="mb-5">
-      <input type="text" placeholder="Company Name" required
-        class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"
-        name="company" />
-      <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
-        Please provide your company name.
-      </div>
-    </div>
-    <div class="mb-5">
-      <select name="inquiryType" required
-        class="w-full px-4 py-3 border-2 text-gray-800 rounded-md outline-none focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100">
-        <option value="" disabled selected>Please Select</option>
-        <option value="general">General Inquiry</option>
-        <option value="sales">Sales Inquiry</option>
-        <option value="support">Technical Support</option>
-        <option value="other">Other</option>
-      </select>
-      <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
-        Please select an inquiry type.
-      </div>
-    </div>
-    <div class="mb-5">
-      <textarea name="message" required placeholder="Message"
-        class="w-full px-4 py-3 border-2 placeholder:text-gray-800 rounded-md outline-none h-36 focus:ring-4 border-gray-300 focus:border-gray-600 ring-gray-100"></textarea>
-      <div class="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
-        Please enter your message.
-      </div>
-    </div>
-    <LandingButton type="submit" size="lg" block>Send Message</LandingButton>
-    <div id="result" class="mt-3 text-center"></div>
-  </form>
+  </div>
 </template>
 
 <style>

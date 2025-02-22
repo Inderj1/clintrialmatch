@@ -13,9 +13,10 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "@nuxt/image-edge",
   ],
-  plugins: ["~/plugins/firebase.js"],
+  plugins: ["~/plugins/firebase.js", "~/plugins/google-maps.js"],
   runtimeConfig: {
     public: {
+      googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
       firebaseApiKey: process.env.VUE_APP_FIREBASE_API_KEY,
       firebaseAuthDomain: process.env.VUE_APP_FIREBASE_AUTH_DOMAIN,
       firebaseProjectId: process.env.VUE_APP_FIREBASE_PROJECT_ID,
@@ -30,7 +31,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: "Orynx",
+      title: "CropMatrix",
       htmlAttrs: {
         lang: "en",
       },
@@ -42,7 +43,7 @@ export default defineNuxtConfig({
         { rel: "icon", type: "image/png", href: "favicon.png" },
         { 
           rel: "stylesheet", 
-          href: "https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+          href: "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
         }
       ],
     },

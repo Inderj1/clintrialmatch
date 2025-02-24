@@ -1,22 +1,42 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getAnalytics, isSupported } from "firebase/analytics";
+import { getAuth } from "firebase/auth";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBJ-aEYuz05JUeHBn7sQViEQxmOrdDR3hU",
-  authDomain: "cropmatrix-app.firebaseapp.com",
-  projectId: "cropmatrix-app",
-  storageBucket: "cropmatrix-app.appspot.com",
+  authDomain: "merix-app.firebaseapp.com",
+  projectId: "merix-app",
+  storageBucket: "merix-app.appspot.com",
   messagingSenderId: "898126982970",
-  appId: "1:898126982970:web:7c0cf2ed8da026935d2a03",
-  measurementId: "G-YM7DVP8GK4",
+  appId: "1:898126982970:web:YOUR_APP_ID",
+  measurementId: "G-YOUR_MEASUREMENT_ID"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const googleProvider = new GoogleAuthProvider();
+export default defineNuxtPlugin(async (nuxtApp) => {
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  let analytics = null;
 
-export default defineNuxtPlugin(() => {});
+  // Only initialize analytics on client side and if supported
+  if (process.client) {
+    try {
+      const isAnalyticsSupported = await isSupported();
+      if (isAnalyticsSupported) {
+        analytics = getAnalytics(app);
+      }
+    } catch (error) {
+      console.warn('Firebase Analytics not initialized:', error);
+    }
+  }
 
-export { app, auth, googleProvider };
+  // Initialize Auth
+  const auth = getAuth(app);
+
+  return {
+    provide: {
+      firebase: app,
+      analytics: analytics,
+      auth: auth
+    }
+  }
+});

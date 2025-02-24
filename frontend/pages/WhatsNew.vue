@@ -1,37 +1,31 @@
 <script setup>
 definePageMeta({
   layout: "landing",
-  title: "What's New - CropMatrix",
   meta: [
-    { hid: 'description', name: 'description', content: 'Stay updated with the latest news and developments from CropMatrix.' },
-    { hid: 'og:title', property: 'og:title', content: "What's New - CropMatrix" },
-    { hid: 'og:description', property: 'og:description', content: 'Stay updated with the latest news and developments from CropMatrix.' },
-    { hid: 'og:image', property: 'og:image', content: '/assets/img/cropmatrix-logo.svg' },
-    { hid: 'og:url', property: 'og:url', content: 'https://www.cropmatrix.com/whatsnew' },
-    { hid: 'twitter:title', name: 'twitter:title', content: "What's New - CropMatrix" },
-    { hid: 'twitter:description', name: 'twitter:description', content: 'Stay updated with the latest news and developments from CropMatrix.' },
-    { hid: 'twitter:image', name: 'twitter:image', content: '/assets/img/cropmatrix-logo.svg' }
+    { hid: 'description', name: 'description', content: 'Stay updated with the latest news and developments from Merix.' },
+    { hid: 'og:title', property: 'og:title', content: "What's New - Merix" },
+    { hid: 'og:description', property: 'og:description', content: 'Stay updated with the latest news and developments from Merix.' },
+    { hid: 'og:image', property: 'og:image', content: '/assets/img/merix-logo.svg' },
+    { hid: 'og:url', property: 'og:url', content: 'https://www.merix.com/whatsnew' },
+    { hid: 'twitter:title', name: 'twitter:title', content: "What's New - Merix" },
+    { hid: 'twitter:description', name: 'twitter:description', content: 'Stay updated with the latest news and developments from Merix.' },
+    { hid: 'twitter:image', name: 'twitter:image', content: '/assets/img/merix-logo.svg' }
   ],
   script: [
     {
       type: 'application/ld+json',
       json: {
-        '@context': 'https://schema.org',
+        '@context': 'http://schema.org',
         '@type': 'NewsArticle',
-        headline: 'Five remarkable QMU innovators could turn unique business ideas into reality',
-        datePublished: '2024-05-14',
-        description: 'CropMatrix is paving the way in new AI driven technology for universities and hospitals. We are now part of Kickstart Converge challenge.',
-        image: '/assets/img/cropmatrix-logo.svg',
+        headline: 'Latest Developments at Merix',
+        description: 'Merix is paving the way in new AI driven technology for universities and hospitals. We are now part of Kickstart Converge challenge.',
+        image: '/assets/img/merix-logo.svg',
         author: {
           '@type': 'Organization',
-          name: 'CropMatrix'
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: 'CropMatrix',
+          name: 'Merix',
           logo: {
             '@type': 'ImageObject',
-            url: '/assets/img/cropmatrix-logo.svg'
+            url: '/assets/img/merix-logo.svg'
           }
         }
       }
@@ -41,5 +35,7 @@ definePageMeta({
 </script>
 
 <template>
-  <div>What's New Page Content</div>
+  <div>
+    <!-- Content here -->
+  </div>
 </template>

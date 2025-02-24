@@ -1,16 +1,15 @@
 <script setup>
-import AboutUs from '~/components/landing/AboutUs.vue';
 
 definePageMeta({
   layout: "landing",
-  title: "About Us - CropMatrix",
+  title: "About Us - Merix",
   meta: [
-    { hid: 'description', name: 'description', content: 'Learn more about CropMatrix, our mission, and values.' },
-    { hid: 'og:title', property: 'og:title', content: 'About Us - CropMatrix' },
-    { hid: 'og:description', property: 'og:description', content: 'Learn more about CropMatrix, our mission, and values.' },
-    { hid: 'og:url', property: 'og:url', content: 'https://cropmatrix.com/about' },
-    { hid: 'twitter:title', name: 'twitter:title', content: 'About Us - CropMatrix' },
-    { hid: 'twitter:description', name: 'twitter:description', content: 'Learn more about CropMatrix, our mission, and values.' }
+    { hid: 'description', name: 'description', content: 'Learn more about Merix, our mission, and values.' },
+    { hid: 'og:title', property: 'og:title', content: 'About Us - Merix' },
+    { hid: 'og:description', property: 'og:description', content: 'Learn more about Merix, our mission, and values.' },
+    { hid: 'og:url', property: 'og:url', content: 'https://merix.com/about' },
+    { hid: 'twitter:title', name: 'twitter:title', content: 'About Us - Merix' },
+    { hid: 'twitter:description', name: 'twitter:description', content: 'Learn more about Merix, our mission, and values.' }
   ],
   script: [
     {
@@ -18,13 +17,13 @@ definePageMeta({
       json: {
         '@context': 'https://schema.org',
         '@type': 'Organization',
-        name: 'CropMatrix',
-        url: 'https://cropmatrix.com',
-        logo: 'assets/img/cropmatrix-logo.svg',
+        name: 'Merix',
+        url: 'https://merix.com',
+        logo: 'assets/img/merix-logo.svg',
         sameAs: [
-          'https://www.facebook.com/cropmatrix',
-          'https://www.twitter.com/cropmatrix',
-          'https://www.linkedin.com/company/cropmatrix'
+          'https://www.facebook.com/merix',
+          'https://www.twitter.com/merix',
+          'https://www.linkedin.com/company/merix'
         ]
       }
     }
@@ -38,7 +37,7 @@ definePageMeta({
     <div class="relative h-[60vh] overflow-hidden">
       <img 
         src="/aboutus.jpg" 
-        alt="CropMatrix Team" 
+        alt="Merix Team" 
         class="absolute inset-0 w-full h-full object-cover"
       />
       <div class="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -66,7 +65,6 @@ definePageMeta({
     </div>
 
     <!-- Main Content -->
-    <AboutUs />
 
     <!-- Growth & Achievements Section -->
     <div class="bg-gray-50 py-16">

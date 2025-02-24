@@ -8,15 +8,22 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    "@nuxtjs/sitemap",
-    "@nuxtjs/robots",
     "nuxt-icon",
     "@nuxt/image-edge",
   ],
-  plugins: ["~/plugins/firebase.js", "~/plugins/google-maps.js"],
+  plugins: ["~/plugins/firebase.js"],
+  nitro: {
+    compatibilityDate: '2025-02-17',
+    devProxy: {
+      '/api': {
+        target: 'http://localhost:8000',
+        changeOrigin: true
+      }
+    }
+  },
   runtimeConfig: {
     public: {
-      googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
+      apiBaseUrl: 'http://localhost:8000',
       firebaseApiKey: process.env.VUE_APP_FIREBASE_API_KEY,
       firebaseAuthDomain: process.env.VUE_APP_FIREBASE_AUTH_DOMAIN,
       firebaseProjectId: process.env.VUE_APP_FIREBASE_PROJECT_ID,
@@ -24,14 +31,11 @@ export default defineNuxtConfig({
       firebaseMessagingSenderId: process.env.VUE_APP_FIREBASE_MESSAGING_SENDER_ID,
       firebaseAppId: process.env.VUE_APP_FIREBASE_APP_ID,
       firebaseMeasurementId: process.env.VUE_APP_FIREBASE_MEASUREMENT_ID,
-    },
-    private: {
-      cohereApiKey: process.env.COHERE_API_KEY,
-    },
+    }
   },
   app: {
     head: {
-      title: "CropMatrix",
+      title: "Merix",
       htmlAttrs: {
         lang: "en",
       },

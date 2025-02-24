@@ -17,8 +17,9 @@ export default {
       },
       colors: {
         custom: '#98c1d9',
-        font: '#2e4360',
-        text: '#2e4360',
+        font: '#293241',
+        text: '#293241',
+        navbar: '#e2e2e2',
         background: {
           DEFAULT: '#edf2f4',
           light: '#edf2f4'

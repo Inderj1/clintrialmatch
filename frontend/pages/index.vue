@@ -1,35 +1,29 @@
 <script setup>
 definePageMeta({
   layout: "landing",
-  title: "CropMatrix",
+  title: "Merix - Patient Engagement & Practice Growth Platform",
   meta: [
-    { hid: 'description', name: 'description', content: 'Sustainable Solutions for Modern Agriculture' },
-    { hid: 'og:title', property: 'og:title', content: 'CropMatrix' },
-    { hid: 'og:description', property: 'og:description', content: 'Leading the way in biological crop protection and natural pollination' },
-    { hid: 'og:image', property: 'og:image', content: '/assets/img/greenhouse-hero.jpg' },
-    { hid: 'og:url', property: 'og:url', content: 'https://www.cropmatrix.com' },
+    { hid: 'description', name: 'description', content: 'Increase revenue and deliver the best patient experience with our mobile app platform for aesthetic and wellness practices.' },
+    { hid: 'og:title', property: 'og:title', content: 'Merix - Patient Engagement & Practice Growth Platform' },
+    { hid: 'og:description', property: 'og:description', content: 'Increase revenue and deliver the best patient experience with our mobile app platform for aesthetic and wellness practices.' },
+    { hid: 'og:image', property: 'og:image', content: '/public/health-heart.jpg' },
+    { hid: 'og:url', property: 'og:url', content: 'https://www.merix.com' },
   ]
 });
 
 import Hero from "../components/landing/Hero.vue";
-import AboutUs from "../components/landing/AboutUs.vue";
 import Features from "../components/landing/Features.vue";
+import MobileApp from "../components/landing/MobileApp.vue";
 import Technologies from "../components/landing/Technologies.vue";
-import Logos from "../components/landing/Logos.vue";
-import Etfs from "../components/landing/Etfs.vue";
 import Cta from "../components/landing/Cta.vue";
-import Contactform from "../components/landing/Contactform.vue";
 </script>
 
 <template>
   <div class="overflow-hidden">
     <Hero />
-    <AboutUs />
     <Features />
+    <MobileApp />
     <Technologies />
-    <Logos />
-    <Etfs />
     <Cta />
-    <Contactform />
   </div>
 </template>

@@ -4,7 +4,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         <!-- Company Info -->
         <div>
-          <img src="/assets/img/cropmatrix-logo.svg" alt="CropMatrix" class="h-8 mb-6" />
+          <img src="/assets/img/merix-logo.svg" alt="Merix" class="h-8 mb-6" />
           <p class="text-sm mb-4">
             Leading provider of sustainable biological crop protection and natural pollination solutions.
           </p>
@@ -67,7 +67,7 @@
               <svg class="h-6 w-6 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
               </svg>
-              <a href="mailto:info@cropmatrix.com" class="hover:text-white transition-colors">info@cropmatrix.com</a>
+              <a href="mailto:info@merix.com" class="hover:text-white transition-colors">info@merix.com</a>
             </li>
           </ul>
         </div>
@@ -76,7 +76,7 @@
       <div class="mt-12 pt-8 border-t border-gray-800">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <p class="text-sm">
-            © {{ new Date().getFullYear() }} CropMatrix. All rights reserved.
+            © {{ new Date().getFullYear() }} Merix. All rights reserved.
           </p>
           <div class="flex space-x-6 mt-4 md:mt-0">
             <a href="#" class="text-sm hover:text-white transition-colors">Privacy Policy</a>

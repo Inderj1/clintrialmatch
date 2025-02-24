@@ -1,41 +1,53 @@
 <template>
-  <div class="py-16 bg-gradient-to-b from-white to-green-50">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">
-        Innovative Agricultural Solutions
-      </h2>
-      <p class="text-xl text-gray-600 text-center mb-12">
-        Leading-edge technologies and methods for sustainable crop protection
-      </p>
+  <div class="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/public/health-heart.jpg')] opacity-5 bg-cover bg-center"></div>
+    <div class="container mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-20">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+          Cutting-Edge Healthcare Technology
+        </h2>
+        <p class="text-lg text-gray-600">
+          Powered by advanced technologies to deliver the best patient experience
+        </p>
+      </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-20">
         <div v-for="tech in technologies" :key="tech.name"
-             class="flex flex-col items-center p-6 rounded-lg bg-white shadow-md hover:shadow-xl transition-all hover:-translate-y-0.5">
-          <div class="w-16 h-16 mb-4 flex items-center justify-center text-green-600">
-            <Icon :name="tech.icon" class="text-4xl" />
+             class="flex flex-col items-center p-8 rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div class="w-16 h-16 mb-6 flex items-center justify-center bg-gradient-to-br from-[#FFB5A0] to-[#ff9c80] text-white rounded-xl">
+            <Icon :name="tech.icon" class="text-3xl" />
           </div>
-          <h3 class="text-gray-900 font-semibold text-lg mb-2 text-center">{{ tech.name }}</h3>
-          <p class="text-gray-600 text-center text-sm">{{ tech.description }}</p>
+          <h3 class="text-gray-900 font-semibold text-lg mb-3 text-center">{{ tech.name }}</h3>
+          <p class="text-gray-600 text-center text-sm leading-relaxed">{{ tech.description }}</p>
         </div>
       </div>
 
-      <div class="mt-16 text-center">
-        <h3 class="text-2xl font-bold text-gray-900 mb-6">Our Commitment to Innovation</h3>
-        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <div class="text-green-600 text-4xl mb-4">🌱</div>
-            <h4 class="text-lg font-semibold mb-2">Sustainable Methods</h4>
-            <p class="text-gray-600">Environmentally friendly approaches to crop protection and pollination</p>
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+          <h3 class="text-2xl md:text-3xl font-bold mb-6 text-gray-900">Our Commitment to Excellence</h3>
+          <p class="text-lg text-gray-600">Delivering innovative solutions for modern healthcare practices</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="w-16 h-16 mb-6 mx-auto flex items-center justify-center bg-gradient-to-br from-[#FFB5A0] to-[#ff9c80] text-white rounded-xl">
+              <span class="text-2xl">💡</span>
+            </div>
+            <h4 class="text-xl font-semibold mb-4 text-gray-900 text-center">Innovation</h4>
+            <p class="text-gray-600 text-center leading-relaxed">Continuous advancement in digital health solutions</p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <div class="text-green-600 text-4xl mb-4">🔬</div>
-            <h4 class="text-lg font-semibold mb-2">Research & Development</h4>
-            <p class="text-gray-600">Continuous innovation in biological control solutions</p>
+          <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="w-16 h-16 mb-6 mx-auto flex items-center justify-center bg-gradient-to-br from-[#FFB5A0] to-[#ff9c80] text-white rounded-xl">
+              <span class="text-2xl">🔒</span>
+            </div>
+            <h4 class="text-xl font-semibold mb-4 text-gray-900 text-center">Security</h4>
+            <p class="text-gray-600 text-center leading-relaxed">Enterprise-grade security for patient data protection</p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <div class="text-green-600 text-4xl mb-4">🤝</div>
-            <h4 class="text-lg font-semibold mb-2">Global Collaboration</h4>
-            <p class="text-gray-600">Partnerships with leading agricultural institutions worldwide</p>
+          <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="w-16 h-16 mb-6 mx-auto flex items-center justify-center bg-gradient-to-br from-[#FFB5A0] to-[#ff9c80] text-white rounded-xl">
+              <span class="text-2xl">📱</span>
+            </div>
+            <h4 class="text-xl font-semibold mb-4 text-gray-900 text-center">Accessibility</h4>
+            <p class="text-gray-600 text-center leading-relaxed">Mobile-first design for seamless patient engagement</p>
           </div>
         </div>
       </div>
@@ -46,44 +58,44 @@
 <script setup>
 const technologies = [
   {
-    name: "Integrated Pest Management",
-    description: "Comprehensive approach combining various control methods for optimal pest management",
-    icon: "mdi:shield-bug"
+    name: "AI-Powered Matching",
+    description: "Advanced algorithms for precise patient-trial matching based on clinical data",
+    icon: "mdi:brain"
   },
   {
-    name: "Biological Control Agents",
-    description: "Natural predators and parasitoids for sustainable pest control",
-    icon: "mdi:butterfly"
+    name: "Secure Data Platform",
+    description: "HIPAA-compliant infrastructure for sensitive patient information",
+    icon: "mdi:shield-lock"
   },
   {
-    name: "Pollination Systems",
-    description: "Advanced bumblebee colonies for efficient crop pollination",
-    icon: "mdi:flower-pollen"
+    name: "Real-time Analytics",
+    description: "Comprehensive dashboards for monitoring trial progress and outcomes",
+    icon: "mdi:chart-box"
   },
   {
-    name: "Monitoring Tools",
-    description: "Smart traps and sensors for pest detection and tracking",
-    icon: "mdi:chart-line-variant"
+    name: "Mobile Integration",
+    description: "Seamless mobile experience for patients and healthcare providers",
+    icon: "mdi:cellphone"
   },
   {
-    name: "Climate Control",
-    description: "Advanced systems for optimal growing conditions",
-    icon: "mdi:thermometer"
+    name: "Smart Notifications",
+    description: "Automated reminders and updates for improved patient engagement",
+    icon: "mdi:bell-ring"
   },
   {
-    name: "Biocontrol Production",
-    description: "State-of-the-art facilities for beneficial insect rearing",
-    icon: "mdi:factory"
+    name: "Document Management",
+    description: "Digital handling of consent forms and trial documentation",
+    icon: "mdi:file-document"
   },
   {
-    name: "Quality Assurance",
-    description: "Rigorous testing and quality control processes",
-    icon: "mdi:check-decagram"
+    name: "Compliance Tools",
+    description: "Built-in features to ensure regulatory compliance",
+    icon: "mdi:check-circle"
   },
   {
-    name: "Digital Solutions",
-    description: "Smart farming tools for data-driven decision making",
-    icon: "mdi:tablet-dashboard"
+    name: "API Integration",
+    description: "Seamless connection with existing healthcare systems",
+    icon: "mdi:api"
   }
 ];
 </script>

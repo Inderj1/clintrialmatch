@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "email": "patient@example.com",
+      "password": "patient123",
+      "role": "Patient"
+    },
+    {
+      "email": "provider@example.com",
+      "password": "provider123",
+      "role": "Provider"
+    }
+  ]
+}

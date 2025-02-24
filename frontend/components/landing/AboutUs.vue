@@ -1,59 +1,71 @@
 <template>
-  <div class="container mx-auto px-4 py-16">
-    <section class="text-center">
-      <h2 class="text-3xl font-bold text-gray-900">About CropMatrix</h2>
-      <p class="mt-4 text-lg text-gray-600 max-w-4xl mx-auto">
-        CropMatrix offers precise, objective and accurate plant-level health and performance assessments, continuously and at any scale.
-      </p>
-    </section>
+  <section class="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-[url('/health-heart.jpg')] opacity-5 bg-cover bg-center"></div>
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Left Column - Content -->
+        <div class="order-2 lg:order-1">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900 leading-tight">
+            Revolutionizing Clinical Trial Enrollment
+          </h2>
+          <div class="space-y-6 text-gray-600">
+            <p class="text-lg leading-relaxed">
+              At Merix, we're dedicated to transforming the clinical trial landscape through innovative technology. Our AI-driven platform streamlines the enrollment process, making it more efficient and accessible for both healthcare providers and patients.
+            </p>
+            <p class="text-lg leading-relaxed">
+              Founded by healthcare and technology experts, we understand the challenges faced by modern medical practices. Our solution combines cutting-edge technology with deep industry expertise to deliver exceptional results.
+            </p>
+          </div>
 
-    <section class="mt-12">
-      <h3 class="text-2xl font-bold text-gray-900 text-center">Our Mission</h3>
-      <p class="mt-4 text-lg text-gray-600 max-w-4xl mx-auto text-center">
-        To provide continuous, automated analysis for observing, measuring, and managing crops to meet quality specifications with maximum control.
-      </p>
-    </section>
+          <!-- Stats Grid -->
+          <div class="grid grid-cols-2 gap-8 mt-12">
+            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <h3 class="text-4xl font-bold mb-2 text-[#FFB5A0]">98%</h3>
+              <p class="text-gray-600">Patient Satisfaction Rate</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <h3 class="text-4xl font-bold mb-2 text-[#FFB5A0]">2x</h3>
+              <p class="text-gray-600">Faster Trial Enrollment</p>
+            </div>
+          </div>
+        </div>
 
-    <section class="mt-12">
-      <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">Our Expertise</h3>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div v-for="feature in features" :key="feature.title" 
-             class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out border border-gray-100">
-          <h4 class="font-semibold text-lg text-gray-900">{{ feature.title }}</h4>
-          <p class="text-gray-600 mt-2 leading-relaxed">
-            {{ feature.description }}
-          </p>
+        <!-- Right Column - Image Grid -->
+        <div class="order-1 lg:order-2 grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <div class="bg-gradient-to-br from-[#FFB5A0] to-[#ff9c80] p-2 rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+              <img 
+                src="/aboutus.jpg" 
+                alt="Healthcare Professional"
+                class="w-full h-48 object-cover rounded-xl"
+              />
+            </div>
+            <div class="bg-gradient-to-br from-[#FFB5A0] to-[#ff9c80] p-2 rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+              <img 
+                src="/glasses.jpg" 
+                alt="Medical Research"
+                class="w-full h-64 object-cover rounded-xl"
+              />
+            </div>
+          </div>
+          <div class="space-y-4 mt-8">
+            <div class="bg-gradient-to-br from-[#FFB5A0] to-[#ff9c80] p-2 rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+              <img 
+                src="/arm.jpg" 
+                alt="Patient Care"
+                class="w-full h-64 object-cover rounded-xl"
+              />
+            </div>
+            <div class="bg-gradient-to-br from-[#FFB5A0] to-[#ff9c80] p-2 rounded-2xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+              <img 
+                src="/health-heart.jpg" 
+                alt="Healthcare Technology"
+                class="w-full h-48 object-cover rounded-xl"
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
-
-<script setup>
-const features = [
-  {
-    title: "Visual Plant Assessment",
-    description: "Comprehensive visual plant-level health and performance assessments that are fundamental to specialty crop farming."
-  },
-  {
-    title: "Continuous Monitoring",
-    description: "Automated analysis providing objective, precise and comprehensive visual health assessments of every plant continuously."
-  },
-  {
-    title: "Data-Driven Decisions",
-    description: "Enabling growers to make informed decisions by looking at as many plants as possible to assess overall health and performance."
-  },
-  {
-    title: "Advanced Technology",
-    description: "Cutting-edge solutions that overcome traditional assessment challenges and limitations faced by specialty crop growers."
-  },
-  {
-    title: "Quality Control",
-    description: "Systematic approach to monitoring and analyzing plant health, ensuring consistent quality and optimal yields."
-  },
-  {
-    title: "Scalable Solutions",
-    description: "Adaptable technology that works across different scales of operation, from small farms to large agricultural enterprises."
-  }
-];
-</script>

@@ -13,9 +13,9 @@ export default function PatientLogin() {
     e.preventDefault();
     try {
       setError(''); // Clear previous errors
-      console.log('Attempting login with:', { email, role: 'Patient' }); // Debug log
-      
-      const response = await fetch('/api/auth/login', {
+      // console.log('Attempting login with:', { email, role: 'Patient' }); // Debug log
+
+      const response = await fetch("http://localhost:8000/login", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,10 +34,10 @@ export default function PatientLogin() {
 
       const data = await response.json();
       console.log('Login successful:', data); // Debug log
-      
+
       // Store role in localStorage
-      localStorage.setItem('role', data.role);
-      
+      localStorage.setItem('role', 'Patient');
+
       // Redirect to patient dashboard
       router.push('/patient/dashboard');
     } catch (err: any) {

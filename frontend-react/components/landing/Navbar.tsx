@@ -30,7 +30,7 @@ const Navbar = () => {
     { title: "Case Studies", path: "/case-studies" },
     { title: "Newsletter", path: "/newsletter" },
     { title: "Volunteers", path: "/volunteers" },
-    { title: "Patient Portal", path: "/login" },
+    { title: "Patient Portal", path: "/patient-login" },
     { title: "Provider Login", path: "/provider-login" }
   ];
 
@@ -103,7 +103,7 @@ const Navbar = () => {
         <Link href="/" className="flex items-center">
           <span className="text-2xl font-bold text-primary-dark">Merix</span>
         </Link>
-        
+
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
           <div className="flex items-center space-x-6">
@@ -134,7 +134,7 @@ const Navbar = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
-                  
+
                   {/* Dropdown Content */}
                   {activeDropdown === item.title && (
                     <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-[200] border border-gray-100">

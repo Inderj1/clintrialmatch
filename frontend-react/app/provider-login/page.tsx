@@ -14,8 +14,8 @@ export default function ProviderLogin() {
     try {
       setError(''); // Clear previous errors
       console.log('Attempting login with:', { email, role: 'Provider' }); // Debug log
-      
-      const response = await fetch('/api/auth/login', {
+
+      const response = await fetch("http://localhost:8000/login", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,10 +34,10 @@ export default function ProviderLogin() {
 
       const data = await response.json();
       console.log('Login successful:', data); // Debug log
-      
+
       // Store role in localStorage
-      localStorage.setItem('role', data.role);
-      
+      localStorage.setItem('role', 'Provider');
+
       // Redirect to provider dashboard
       router.push('/provider/dashboard');
     } catch (err: any) {

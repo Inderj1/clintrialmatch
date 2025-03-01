@@ -27,19 +27,23 @@ export default function ProviderLogin() {
         }),
       });
 
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.detail || 'Invalid credentials');
-      }
-
       const data = await response.json();
-      console.log('Login successful:', data); // Debug log
+      let roleBackend = data.data && data.data.user && data.data.user.role ? data.data.user.role : null;
+      if (data.code != 200 || roleBackend != 'provider') {
+        //const data = await response.json();
+        let errorLogin = data.code != 200 ? data.message || 'Invalid credentials' : "Unauthorized to login";
+        throw new Error(errorLogin);
+      }
+      else {
+        //const data = await response.json();
+        console.log('Login successful:', data); // Debug log
 
-      // Store role in localStorage
-      localStorage.setItem('role', 'Provider');
+        // Store role in localStorage
+        localStorage.setItem('role', 'Provider');
 
-      // Redirect to provider dashboard
-      router.push('/provider/dashboard');
+        // Redirect to provider dashboard
+        router.push('/provider/dashboard');
+      }
     } catch (err: any) {
       console.error('Login error:', err);
       setError(err.message || 'Connection error - please check if the server is running');

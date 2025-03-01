@@ -26,20 +26,24 @@ export default function PatientLogin() {
           role: 'Patient'
         }),
       });
-
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.detail || 'Invalid credentials');
-      }
-
       const data = await response.json();
-      console.log('Login successful:', data); // Debug log
+      let roleBackend = data.data && data.data.user && data.data.user.role ? data.data.user.role : null;
 
-      // Store role in localStorage
-      localStorage.setItem('role', 'Patient');
+      if (data.code != 200 || roleBackend != 'patient') {
+        //const data = await response.json();
+        let errorLogin = data.code != 200 ? data.message || 'Invalid credentials' : "Unauthorized to login";
+        throw new Error(errorLogin);
+      }
+      else {
+        //const data = await response.json();
+        console.log('Login successful:', data); // Debug log
 
-      // Redirect to patient dashboard
-      router.push('/patient/dashboard');
+        // Store role in localStorage
+        localStorage.setItem('role', 'Patient');
+
+        // Redirect to patient dashboard
+        router.push('/patient/dashboard');
+      }
     } catch (err: any) {
       console.error('Login error:', err);
       setError(err.message || 'Connection error - please check if the server is running');

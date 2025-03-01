@@ -6,6 +6,8 @@ import {
   Home, Activity, Bell, ChevronDown, MessageSquare,
   Database, ClipboardList, UserCheck, BarChart2, Clock
 } from 'lucide-react';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 const Sidebar = ({ isProvider, activeMenu, setActiveMenu }) => {
   const [expandedMenus, setExpandedMenus] = useState({});
@@ -221,6 +223,15 @@ const MainContent = ({ activeMenu, isProvider }) => {
 };
 
 const Dashboard = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    // Check if user is logged in
+    const role = localStorage.getItem('role');
+    if (!role || role !== 'Provider') {
+      router.push('/provider-login');
+    }
+  }, [router]);
   const [isProvider, setIsProvider] = useState(true);
   const [activeMenu, setActiveMenu] = useState('dashboard');
 

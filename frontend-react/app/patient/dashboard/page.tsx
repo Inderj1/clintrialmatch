@@ -9,6 +9,8 @@ import {
   ChevronRight, FileText, Bell, Settings, Home, ClipboardList,
   Users, ChevronDown, Database
 } from 'lucide-react';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 const Sidebar = ({ activeMenu, setActiveMenu }) => {
   const [expandedMenus, setExpandedMenus] = useState({});
@@ -299,6 +301,14 @@ const DashboardContent = () => {
 };
 
 const PatientPortal = () => {
+  const router = useRouter();
+  useEffect(() => {
+    // Check if user is logged in
+    const role = localStorage.getItem('role');
+    if (!role || role !== 'Patient') {
+      router.push('/patient-login');
+    }
+  }, [router]);
   const [activeMenu, setActiveMenu] = useState('dashboard');
   const patientDetails = {
     name: "Sarah Thompson",

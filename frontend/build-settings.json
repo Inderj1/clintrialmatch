@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "appRoot": "/",
+  "frontend": {
+    "phases": {
+      "preBuild": {
+        "commands": [
+          "echo \"Starting frontend build process\"",
+          "echo \"Current directory structure:\"",
+          "pwd",
+          "ls -la",
+          "echo \"Checking for frontend directory...\"",
+          "if [ -d \"frontend\" ]; then echo \"Frontend directory found, changing to it\"; cd frontend; if [ -f \"package.json\" ]; then echo \"Installing npm dependencies...\"; npm install; else echo \"Error: No package.json found in frontend directory. Skipping npm install.\"; exit 1; fi; else echo \"No frontend directory found, assuming we're already in the frontend directory\"; if [ -f \"package.json\" ]; then echo \"Installing npm dependencies...\"; npm install; else echo \"Error: No package.json found. Skipping npm install.\"; exit 1; fi; fi"
+        ]
+      },
+      "build": {
+        "commands": [
+          "echo \"Building Next.js application\"",
+          "if [ -d \"frontend\" ] && [ ! -f \"package.json\" ]; then echo \"Frontend directory found, changing to it\"; cd frontend; if [ -f \"package.json\" ]; then echo \"Building Next.js application...\"; npm run build; else echo \"Error: No package.json found in frontend directory. Skipping npm build.\"; exit 1; fi; else echo \"No frontend directory found or already in frontend directory\"; if [ -f \"package.json\" ]; then echo \"Building Next.js application...\"; npm run build; else echo \"Error: No package.json found. Skipping npm build.\"; exit 1; fi; fi"
+        ]
+      }
+    },
+    "artifacts": {
+      "baseDirectory": "$(if [ -d \"frontend\" ] && [ -d \"frontend/.next\" ]; then echo \"frontend/.next\"; else echo \".next\"; fi)",
+      "files": [
+        "**/*"
+      ]
+    },
+    "cache": {
+      "paths": [
+        "node_modules/**/*",
+        ".next/cache/**/*",
+        "frontend/node_modules/**/*",
+        "frontend/.next/cache/**/*"
+      ]
+    }
+  },
+  "backend": {
+    "phases": {
+      "build": {
+        "commands": [
+          "echo \"Starting backend build process\"",
+          "echo \"Current directory structure:\"",
+          "pwd",
+          "ls -la",
+          "echo \"Checking for backend directory...\"",
+          "if [ -d \"backend\" ]; then echo \"Backend directory found, changing to it\"; cd backend; if [ -f \"pyproject.toml\" ]; then echo \"Installing Python dependencies with Poetry...\"; pip install poetry; poetry config virtualenvs.create false; poetry install --no-root; else echo \"No pyproject.toml found in backend directory, skipping backend build\"; exit 0; fi; else echo \"No backend directory found, assuming we're already in the backend directory or backend is not included\"; if [ -f \"pyproject.toml\" ]; then echo \"Installing Python dependencies with Poetry...\"; pip install poetry; poetry config virtualenvs.create false; poetry install --no-root; else echo \"No pyproject.toml found, skipping backend build\"; exit 0; fi; fi"
+        ]
+      }
+    },
+    "artifacts": {
+      "baseDirectory": "$(if [ -d \"backend\" ]; then echo \"backend\"; else echo \".\"; fi)",
+      "files": [
+        "**/*"
+      ],
+      "discard-paths": "no"
+    }
+  }
+}

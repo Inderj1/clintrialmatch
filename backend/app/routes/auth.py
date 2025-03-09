@@ -3,6 +3,8 @@ from pydantic import BaseModel
 import json
 import os
 
+print("Loading auth.py...")
+
 router = APIRouter()
 
 class LoginRequest(BaseModel):

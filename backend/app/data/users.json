@@ -9,6 +9,16 @@
       "email": "provider@example.com",
       "password": "provider123",
       "role": "Provider"
+    },
+    {
+      "email": "test@atvantiq.com",
+      "password": "12345",
+      "role": "Provider"
+    },
+    {
+      "email": "test2@atvantiq.com",
+      "password": "12345",
+      "role": "Patient"
     }
   ]
 }

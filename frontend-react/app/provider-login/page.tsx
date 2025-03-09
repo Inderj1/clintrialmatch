@@ -13,9 +13,8 @@ export default function ProviderLogin() {
     e.preventDefault();
     try {
       setError(''); // Clear previous errors
-      console.log('Attempting login with:', { email, role: 'Provider' }); // Debug log
-
-      const response = await fetch("http://localhost:8000/login", {
+      
+      const response = await fetch("http://localhost:8001/api/auth/login", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -26,24 +25,26 @@ export default function ProviderLogin() {
           role: 'Provider'
         }),
       });
-
+      
       const data = await response.json();
-      let roleBackend = data.data && data.data.user && data.data.user.role ? data.data.user.role : null;
-      if (data.code != 200 || roleBackend != 'provider') {
-        //const data = await response.json();
-        let errorLogin = data.code != 200 ? data.message || 'Invalid credentials' : "Unauthorized to login";
-        throw new Error(errorLogin);
+      
+      if (!response.ok) {
+        throw new Error(data.detail || 'Login failed');
       }
-      else {
-        //const data = await response.json();
-        console.log('Login successful:', data); // Debug log
-
-        // Store role in localStorage
-        localStorage.setItem('role', 'Provider');
-
-        // Redirect to provider dashboard
-        router.push('/provider/dashboard');
+      
+      const roleBackend = data.role;
+      
+      if (roleBackend !== 'Provider') {
+        throw new Error('Unauthorized to login');
       }
+      
+      console.log('Login successful:', data);
+
+      // Store role in localStorage
+      localStorage.setItem('role', 'Provider');
+
+      // Redirect to provider dashboard
+      router.push('/provider/dashboard');
     } catch (err: any) {
       console.error('Login error:', err);
       setError(err.message || 'Connection error - please check if the server is running');

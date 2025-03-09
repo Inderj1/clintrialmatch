@@ -11,15 +11,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <Image 
-              src="/assets/img/merix-logo.svg" 
-              alt="Merix" 
-              width={128} 
-              height={32} 
-              className="h-8 mb-6"
-            />
+            <span className="text-2xl font-bold text-white mb-6 block">ClinTrialMatch</span>
             <p className="text-sm mb-4">
-              Leading provider of sustainable biological crop protection and natural pollination solutions.
+              AI-powered oncology clinical trial platform connecting patients with breakthrough cancer treatments.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -47,10 +41,10 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Solutions</h3>
             <ul className="space-y-3">
-              <li><Link href="/crops" className="hover:text-white transition-colors">Biological Control</Link></li>
-              <li><Link href="/crops" className="hover:text-white transition-colors">Natural Pollination</Link></li>
-              <li><Link href="/crops" className="hover:text-white transition-colors">Monitoring Systems</Link></li>
-              <li><Link href="/crops" className="hover:text-white transition-colors">Technical Support</Link></li>
+              <li><Link href="/platform" className="hover:text-white transition-colors">Patient Matching</Link></li>
+              <li><Link href="/platform" className="hover:text-white transition-colors">Trial Management</Link></li>
+              <li><Link href="/platform" className="hover:text-white transition-colors">Health Monitoring</Link></li>
+              <li><Link href="/platform" className="hover:text-white transition-colors">Clinical Support</Link></li>
             </ul>
           </div>
 
@@ -59,8 +53,9 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4">Resources</h3>
             <ul className="space-y-3">
               <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Case Studies</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Knowledge Base</Link></li>
+              <li><Link href="/patient-login" className="hover:text-white transition-colors">For Patients</Link></li>
+              <li><Link href="/provider-login" className="hover:text-white transition-colors">For Providers</Link></li>
+              <li><Link href="/case-studies" className="hover:text-white transition-colors">Clinical Trials</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
@@ -70,17 +65,17 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start">
-                <svg className="h-6 w-6 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-6 w-6 mr-2 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                 </svg>
-                <span>Global Headquarters<br/>Address Line 1<br/>Address Line 2</span>
+                <span>Medical Center Campus<br/>1000 Innovation Drive<br/>Suite 500</span>
               </li>
               <li className="flex items-center">
-                <svg className="h-6 w-6 mr-2 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-6 w-6 mr-2 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                 </svg>
-                <a href="mailto:info@merix.com" className="hover:text-white transition-colors">info@merix.com</a>
+                <a href="mailto:info@clintrialMatch.com" className="hover:text-white transition-colors">info@clintrialMatch.com</a>
               </li>
             </ul>
           </div>
@@ -89,7 +84,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm">
-              © {new Date().getFullYear()} Merix. All rights reserved.
+              © {new Date().getFullYear()} ClinTrialMatch. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="#" className="text-sm hover:text-white transition-colors">Privacy Policy</Link>

@@ -13,9 +13,8 @@ export default function PatientLogin() {
     e.preventDefault();
     try {
       setError(''); // Clear previous errors
-      // console.log('Attempting login with:', { email, role: 'Patient' }); // Debug log
-
-      const response = await fetch("http://localhost:8000/login", {
+      
+      const response = await fetch("http://localhost:8001/api/auth/login", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -26,24 +25,26 @@ export default function PatientLogin() {
           role: 'Patient'
         }),
       });
+      
       const data = await response.json();
-      let roleBackend = data.data && data.data.user && data.data.user.role ? data.data.user.role : null;
-
-      if (data.code != 200 || roleBackend != 'patient') {
-        //const data = await response.json();
-        let errorLogin = data.code != 200 ? data.message || 'Invalid credentials' : "Unauthorized to login";
-        throw new Error(errorLogin);
+      
+      if (!response.ok) {
+        throw new Error(data.detail || 'Login failed');
       }
-      else {
-        //const data = await response.json();
-        console.log('Login successful:', data); // Debug log
-
-        // Store role in localStorage
-        localStorage.setItem('role', 'Patient');
-
-        // Redirect to patient dashboard
-        router.push('/patient/dashboard');
+      
+      const roleBackend = data.role;
+      
+      if (roleBackend !== 'Patient') {
+        throw new Error('Unauthorized to login');
       }
+      
+      console.log('Login successful:', data);
+
+      // Store role in localStorage
+      localStorage.setItem('role', 'Patient');
+
+      // Redirect to patient dashboard
+      router.push('/patient/dashboard');
     } catch (err: any) {
       console.error('Login error:', err);
       setError(err.message || 'Connection error - please check if the server is running');

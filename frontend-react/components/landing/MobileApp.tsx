@@ -63,7 +63,7 @@ export default function MobileApp() {
                   <p className="text-gray-600 text-sm">Dermatology Clinic</p>
                 </div>
               </div>
-              <p className="text-gray-600 leading-relaxed">"Merix has transformed how we engage with patients. The mobile app has significantly boosted our membership sales."</p>
+              <p className="text-gray-600 leading-relaxed">"ClinTrialMatch has transformed how we engage with patients. The mobile app has significantly boosted our membership sales."</p>
             </div>
 
             {/* Testimonial 2 */}

@@ -31,7 +31,7 @@ frontend:
     build:
       commands:
         - echo "Building Next.js application"
-        - if [ -d "frontend" ] && [ ! -f "package.json" ]; then
+        - if [ -d "frontend" ]; then
             echo "Frontend directory found, changing to it";
             cd frontend;
             if [ -f "package.json" ]; then
@@ -42,7 +42,7 @@ frontend:
               exit 1;
             fi
           else
-            echo "No frontend directory found or already in frontend directory";
+            echo "No frontend directory found, assuming we're already in the frontend directory";
             if [ -f "package.json" ]; then
               echo "Building Next.js application...";
               npm run build;

@@ -16,7 +16,7 @@
       "build": {
         "commands": [
           "echo \"Building Next.js application\"",
-          "if [ -d \"frontend\" ] && [ ! -f \"package.json\" ]; then echo \"Frontend directory found, changing to it\"; cd frontend; if [ -f \"package.json\" ]; then echo \"Building Next.js application...\"; npm run build; else echo \"Error: No package.json found in frontend directory. Skipping npm build.\"; exit 1; fi; else echo \"No frontend directory found or already in frontend directory\"; if [ -f \"package.json\" ]; then echo \"Building Next.js application...\"; npm run build; else echo \"Error: No package.json found. Skipping npm build.\"; exit 1; fi; fi"
+          "if [ -d \"frontend\" ]; then echo \"Frontend directory found, changing to it\"; cd frontend; if [ -f \"package.json\" ]; then echo \"Building Next.js application...\"; npm run build; else echo \"Error: No package.json found in frontend directory. Skipping npm build.\"; exit 1; fi; else echo \"No frontend directory found, assuming we're already in the frontend directory\"; if [ -f \"package.json\" ]; then echo \"Building Next.js application...\"; npm run build; else echo \"Error: No package.json found. Skipping npm build.\"; exit 1; fi; fi"
         ]
       }
     },

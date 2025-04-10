@@ -13,8 +13,8 @@ export default function PatientLogin() {
     e.preventDefault();
     try {
       setError(''); // Clear previous errors
-      
-      const response = await fetch("http://localhost:8001/api/auth/login", {
+
+      const response = await fetch("http://localhost:8000/login", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -25,19 +25,19 @@ export default function PatientLogin() {
           role: 'Patient'
         }),
       });
-      
+
       const data = await response.json();
-      
+
       if (!response.ok) {
         throw new Error(data.detail || 'Login failed');
       }
-      
+
       const roleBackend = data.role;
-      
+
       if (roleBackend !== 'Patient') {
         throw new Error('Unauthorized to login');
       }
-      
+
       console.log('Login successful:', data);
 
       // Store role in localStorage
